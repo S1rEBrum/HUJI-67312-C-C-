@@ -10,26 +10,26 @@
 #define MINRATEVAL 1
 
 // implement your cpp code here
+/// Constructor
 User::User (std::string &name, rank_map &ranks,
             std::shared_ptr<RecommendationSystem> rs) : name (name), ranks
     (ranks), rs (rs) {}
 
+/// Getter function for name parameter
 std::string User::get_name () const {
   return name;
 }
 
+/// Getter function for ranks parameter
 const rank_map &User::get_ranks () const {
   return ranks;
 }
 
 void
-User::add_movie_to_rs (const std::string &name, int year, const std::vector<double> &features, double rate) {
-  // TODO: check if rate check is needed
-//  if (rate < MINRATEVAL || rate > MAXRATEVAL) {
-//    throw std::out_of_range ("The rate is out of range\n");
-//  }
-  rs->add_movie (name, year, features);
-  ranks[rs->get_movie (name, year)] = rate;
+User::add_movie_to_rs (const std::string &username, int year, const
+std::vector<double> &features, double rate) {
+  rs->add_movie (username, year, features);
+  ranks[rs->get_movie (username, year)] = rate;
 }
 
 sp_movie User::get_recommendation_by_content () const {
@@ -41,7 +41,8 @@ sp_movie User::get_recommendation_by_cf (int k) const {
 }
 
 double
-User::get_prediction_score_for_movie (const std::string &name, int year, int k) const {
+User::get_prediction_score_for_movie
+    (const std::string &name, int year, int k) const {
   return rs->predict_movie_score (*this, rs->get_movie (name, year), k);
 }
 

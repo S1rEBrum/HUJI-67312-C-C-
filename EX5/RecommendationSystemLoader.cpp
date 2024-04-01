@@ -6,8 +6,8 @@
 #define ERROR_MSG "input file is incorrect"
 
 std::unique_ptr<RecommendationSystem>
-RecommendationSystemLoader::create_rs_from_movies (const
-                                                   std::string &movies_file_path) noexcept (false) {
+RecommendationSystemLoader::create_rs_from_movies
+    (const std::string &movies_file_path) noexcept (false) {
   std::unique_ptr<RecommendationSystem> rs =
       std::make_unique<RecommendationSystem> ();
   std::ifstream in_file;

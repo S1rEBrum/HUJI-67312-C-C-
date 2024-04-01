@@ -6,7 +6,8 @@
 
 std::vector<User>
 UsersLoader::create_users
-    (const std::string &users_file_path, std::unique_ptr<RecommendationSystem> rs)
+    (const std::string &users_file_path,
+     std::unique_ptr<RecommendationSystem> rs)
 noexcept (false) {
   std::shared_ptr<RecommendationSystem> s_rs = std::move (rs);
   std::ifstream in_file;

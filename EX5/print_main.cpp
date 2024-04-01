@@ -10,6 +10,6 @@ int main(){
     std::cout << m << std::endl;
     auto rs = RecommendationSystemLoader::create_rs_from_movies("RecommendationSystemLoader_input.txt");
     std::cout << *rs << std::endl;
-    auto users = UsersLoader::create_users("UsersLoader_input.txt",std::move(rs));
-    std::cout << users[0] << std::endl;
+//    auto users = UsersLoader::create_users("UsersLoader_input.txt",std::move(rs));
+//    std::cout << users[0] << std::endl;
 }

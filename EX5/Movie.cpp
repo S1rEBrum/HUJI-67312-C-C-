@@ -25,16 +25,20 @@ bool sp_movie_equal (const sp_movie &m1, const sp_movie &m2) {
   return !(*m1 < *m2) && !(*m2 < *m1);
 }
 
+/// Constructor
 Movie::Movie (const std::string &name, int year) : name (name), year (year) {}
 
+/// Getter function for name parameter
 const std::string &Movie::get_name () const {
   return name;
 }
 
+/// getter function for year parameter
 int Movie::get_year () const {
   return year;
 }
 
+/// Operator less then (<)
 bool Movie::operator< (const Movie &other) const {
   if (year == other.year) {
     return name < other.name;
@@ -44,6 +48,7 @@ bool Movie::operator< (const Movie &other) const {
   }
 }
 
+/// Ostream operator
 std::ostream &operator<< (std::ostream &os, const Movie &m) {
   os << m.name << " (" << m.year << ")" << std::endl;
   return os;

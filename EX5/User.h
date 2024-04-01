@@ -24,11 +24,13 @@ class User {
    */
   User (std::string &name, rank_map &ranks,
         std::shared_ptr<RecommendationSystem> rs);
+
   /**
    * a getter for the user's name
    * @return the username
    */
   std::string get_name () const;
+
   /**
    * function for adding a movie to the DB
    * @param name name of movie
@@ -53,7 +55,8 @@ class User {
   sp_movie get_recommendation_by_content () const;
 
   /**
-   * returns a recommendation according to the similarity recommendation method
+   * returns a recommendation according to the similarity recommendation
+   * method
    * @param k the number of the most similar movies to calculate by
    * @return recommendation
    */
@@ -63,11 +66,13 @@ class User {
    * predicts the score for a given movie
    * @param name the name of the movie
    * @param year the year the movie was created
-   * @param k the parameter which represents the number of the most similar movies to predict the score by
+   * @param k the parameter which represents the number of the
+   * most similar movies to predict the score by
    * @return predicted score for the given movie
    */
   double
-  get_prediction_score_for_movie (const std::string &name, int year, int k) const;
+  get_prediction_score_for_movie
+      (const std::string &name, int year, int k) const;
 
   /**
    * output stream operator

@@ -23,7 +23,8 @@ class UsersLoader {
   /**
    *
    * loads users by the given format with their movie's ranks
-   * @param users_file_path a path to the file of the users and their movie ranks
+   * @param users_file_path a path to the file of the users and their
+   * movie ranks
    * @param rs RecommendingSystem for the Users
    * @return vector of the users created according to the file
    */

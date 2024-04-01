@@ -13,7 +13,8 @@ class Movie;
 typedef std::shared_ptr<Movie> sp_movie; // define your smart pointer
 
 /**
- * those declartions and typedefs are given to you and should be used in the ex
+ * those declarations and typedefs are given to you and should be used in
+ * the ex
  */
 typedef std::size_t (*hash_func) (const sp_movie &movie);
 typedef bool (*equal_func) (const sp_movie &m1, const sp_movie &m2);
@@ -36,28 +37,28 @@ class Movie {
    * returns the name of the movie
    * @return const ref to name of movie
    */
-  //TODO get_name();
   const std::string &get_name () const;
+
   /**
    * returns the year the movie was made
    * @return year movie was made
    */
-  //TODO get_year();
   int get_year () const;
+
   /**
    * operator< for two movies
    * @param rhs: right hand side
    * @param lhs: left hand side
-   * @return returns true if (lhs.year) < rhs.year or (rhs.year == lhs.year & lhs.name < rhs.name) else return false
+   * @return returns true if (lhs.year) < rhs.year or
+   * (rhs.year == lhs.year & lhs.name < rhs.name) else return false
    */
-  //TODO operator<;
   bool operator< (const Movie &other) const;
+
   /**
    * operator<< for movie
    * @param os ostream to output info with
    * @param movie movie to output
    */
-  // TODO operator<<;
   friend std::ostream &operator<< (std::ostream &os, const Movie &m);
 };
 
